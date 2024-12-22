@@ -1,0 +1,293 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+header {
+    background: #007acc;
+    color: white;
+    text-align: center;
+}
+nav {
+    background: #006bb3; /* Цвет фона меню */
+    padding: 10px; /* Отступы внутри меню */
+    display: flex; /* Используем flexbox для выравнивания кнопок */
+    justify-content: center; /* Центрируем кнопки по горизонтали */
+    width: 100%; /* Занимает всю ширину родителя */
+    position: fixed; /* Закрепляем меню вверху */
+    top: 0;
+    z-index: 1000; /* Повышаем порядок, чтобы меню было поверх содержимого */
+}
+
+nav a {
+    color: white; /* Цвет текста кнопок */
+    padding: 10px 15px; /* Отступы для кнопок */
+    text-decoration: none; /* Убираем подчеркивание */
+    margin: 0 15px; /* Отступы между кнопками */
+    border-radius: 5px; /* Закругление углов кнопок */
+    transition: background 0.3s; /* Плавный переход цвета */
+}
+
+nav a:hover {
+    background: #003f69; /* Цвет фона при наведении */
+}
+.logo {
+    max-width: 200px; /* Максимальная ширина логотипа */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    margin: 60px 0 10px; /* Отступ сверху для размещения ниже меню */
+    transition: transform 0.3s; /* Анимации при наведении */
+}
+.logo:hover {
+    transform: scale(1.05); /* Увеличение логотипа при наведении */
+}
+h1 {
+    margin: 20px 0; /* Отступы у заголовка */
+    padding-bottom: 20px; /* Добавлен отступ снизу для увеличения расстояния от нижнего края */
+}
+main {
+    padding: 20px;
+    max-width: 1200px; /* Максимальная ширина контента */
+    margin: auto;
+    padding-top: 120px; /* Увеличенный отступ сверху для содержимого, чтобы учесть фиксированное меню */
+    box-sizing: border-box; /* Учитываем отступы и границы в ширину и высоту */
+}
+section {
+    background: white;
+    padding: 20px; /* Увеличенный отступ для содержимого */
+    margin: 20px 0; /* Увеличенный отступ между секциями */
+    border-radius: 15px; /* Закругленные углы блока */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    display: flex; /* Используем flexbox для размещения фото и текста */
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+    flex-wrap: wrap; /* Позволяет изображению и тексту обтекать друг друга на маленьких экранах */
+    animation: fadeInUp 0.5s forwards; /* Анимация появления блока */
+}
+
+section:nth-child(1) {
+    animation-delay: 0.2s; /* Задержка анимации для первого блока */
+}
+section:nth-child(2) {
+    animation-delay: 0.4s; /* Задержка анимации для второго блока */
+}
+
+section img {
+    max-width: 300px; /* Максимальная ширина картинки */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    margin-right: 20px; /* Отступ справа от изображения */
+    margin-bottom: 10px; /* Отступ снизу от изображения */
+    border-radius: 30px; /* Закругленные углы рамки */
+}
+
+section div {
+    flex: 1; /* Позволяет текстовым блокам занимать оставшееся пространство */
+    padding-left: 20px; /* Отступ слева для текстового блока */
+}
+.services-button {
+    display: inline-block; /* Отображение как блок */
+    margin-top: 10px; /* Отступ сверху для кнопки */
+    padding: 10px 20px; /* Отступы для кнопки */
+    background-color: #007acc; /* Цвет фона кнопки */
+    color: white; /* Цвет текста кнопки */
+    border: none; /* Без границы */
+    border-radius: 5px; /* Закругление углов кнопки */
+    text-decoration: none; /* Убрать подчеркивание */
+    transition: background 0.3s; /* Плавный переход цвета */
+}
+.main-image {
+    flex: 1;
+    margin-right: 10px;
+}
+.section-content {
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+}
+.image-text-container {
+    display: flex;
+    margin-bottom: 20px; /* Отступ между изображением и таблицей */
+}
+
+.gallery {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.gallery img {
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    cursor: pointer; /* Указатель-курс при наведении на изображение */
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+.catalog-section {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.services-button:hover {
+    background-color: #005f7f; /* Цвет фона при наведении */
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+footer {
+    position: fixed;
+    text-align: center;
+    padding: 5px;
+    background: #007acc;
+    color: white;
+    bottom: 0;
+    width: 100%; /* Занимает всю ширину экрана */
+}
+
+/* Стили для нового блока с картой */
+.map-section {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.catalog-section {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tabs {
+    margin-bottom: 20px;
+}
+
+.tabs ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    border-bottom: 2px solid #007acc;
+}
+
+.tabs li {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.tabs li.active {
+    background-color: #007acc;
+    color: white;
+    border-radius: 5px 5px 0 0;
+}
+
+.tabs li:hover {
+    background-color: #005f7f;
+    color: white;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.data-table th, .data-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.data-table th {
+    background-color: #f2f2f2;
+}
+
+.data-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+.data-table a {
+    color: #007acc;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.data-table a:hover {
+    color: #005f7f;
+}
+      /* Стили для модального окна */
+      .modal {
+        display: none; /* Скрыто по умолчанию */
+        position: fixed; /* Фиксированное позиционирование */
+        z-index: 1000; /* Поверх других элементов */
+        left: 0;
+        top: 0;
+        width: 100%; /* Ширина экрана */
+        height: 100%; /* Высота экрана */
+        overflow: auto; /* Прокрутка при необходимости */
+        background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный фон */
+    }
+
+    .modal-content {
+        margin: 15% auto; /* 15% сверху и снизу, центрирование */
+        display: block;
+        width: 80%; /* Ширина модального окна */
+        max-width: 700px; /* Максимальная ширина */
+    }
+
+    .close {
+        position: absolute; /* Абсолютное позиционирование */
+        top: 10px;
+        right: 25px;
+        color: white;
+        font-size: 35px;
+        font-weight: bold;
+        cursor: pointer; /* Указатель-курс при наведении на кнопку закрытия */
+    }
+    .text-content {
+        flex: 1; /* Занимает оставшееся пространство */
+        display: flex;
+        flex-direction: column;
+        margin-left: -350px;
+        justify-content: center; /* Центрируем текст вертикально */
+    }
+    h2, h3 {
+        color: #333;
+    }
+    
+    button {
+        background-color: #007acc;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    
+    button:hover {
+        background-color: #005f7f;
+    }
+    
